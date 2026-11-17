@@ -38,7 +38,7 @@ You need Node 18 or later. There are no dependencies and no build step.
 npm run dev
 ```
 
-Then open http://localhost:4190. Set `PORT` to use a different port.
+Then open http://localhost:4173. Set `PORT` to use a different port.
 
 ## Test it
 
