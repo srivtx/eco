@@ -408,3 +408,12 @@ table.t tr.sub td { color: var(--ink-2); }
 .w-l a::before { content: counter(w); flex: none; width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--ink); display: grid; place-items: center; font: 700 11px var(--mono); background: var(--paper); }
 .w-l li[data-done] a::before { content: "✓"; background: var(--good); color: #fff; }
 .w-l a:hover { background: color-mix(in srgb, var(--wc) 16%, var(--surface)); }
+
+/* balance sheet blocks */
+.bs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bs-h { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); margin-bottom: 6px; }
+.bs-col { display: flex; flex-direction: column; height: 280px; border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; background: var(--paper); }
+.bs-c { min-height: 28px; display: flex; flex-wrap: wrap; gap: 0 6px; align-content: center; justify-content: center; align-items: baseline; text-align: center; border-bottom: 2px solid var(--ink); color: #1b1530; overflow: hidden; transition: flex-grow .35s cubic-bezier(.3,1.2,.5,1); font-size: 13px; line-height: 1.2; padding: 0 4px; }
+.bs-c:last-child { border-bottom: 0; }
+.bs-c b { font: 750 14px var(--display); }
+@media (max-width: 520px) { .bs-col { height: 230px; } .bs-c { font-size: 11px; } }
