@@ -2,7 +2,7 @@
 
 **Money, markets and minds from first principles.** An interactive course covering economics, finance, private equity, stock markets, bonds, derivatives, the consultant's toolkit, and the behavioural psychology behind every price.
 
-There are 86 lessons across 14 worlds. Every lesson has simulations you can drag, predictions to commit to before the answer is shown, worked exercises, an "on the job" section on how professionals use the idea, a set of terms, and a short quiz.
+There are 94 lessons across 15 worlds. Every lesson has simulations you can drag, predictions to commit to before the answer is shown, worked exercises, an "on the job" section on how professionals use the idea, an "Insider's view" (how the powerful really play it, where the legal line is, and a real case file), a set of terms, and a short quiz that ends with a real-world situation.
 
 ## The worlds
 
@@ -22,12 +22,13 @@ There are 86 lessons across 14 worlds. Every lesson has simulations you can drag
 | 12 | Mind & money | Two systems, prospect theory, anchoring, mental accounting, present bias, herding, nudges, persuasion, negotiation |
 | 13 | Consultant's toolkit | MECE and issue trees, market sizing, unit economics, frameworks, pricing, break-even, a full case |
 | 14 | Crashes & crises | Bank runs, leverage spirals, 2008, bubbles |
+| 15 | Power & the rules | Who writes the rules, how the rich use them, tax games, insider trading, manipulation, fraud, monopoly power, ethical dilemmas |
 
 The course also has these pages:
 
-- **Paths**: curated routes through the worlds, such as "Think like a consultant", "Break into PE & banking", "Invest without getting fooled", "Understand the news" and "The psychology of money".
+- **Paths**: curated routes through the worlds, such as "Think like a consultant", "Break into PE & banking", "Invest without getting fooled", "Understand the news", "The psychology of money" and "How the game is really played".
 - **Glossary**: every term, A to Z, searchable, with links back to the lesson that teaches it.
-- **Practice**: a quick-fire quiz, a "weak spots" round, and spaced-repetition flashcards.
+- **Practice**: a quick-fire quiz, a "situation room" of real-world scenarios, a "weak spots" round, and spaced-repetition flashcards.
 - **Concept web**: every lesson and how it connects to the others.
 
 ## Run it
@@ -55,7 +56,7 @@ The test needs Playwright. It opens every lesson and page on a desktop and a pho
 - `lib/ui.js` holds the widgets: sliders, toggles, stat tiles, predict-then-reveal, numeric exercises, steppers and flip cards.
 - `lib/chart.js` is a small SVG chart engine with a crosshair tooltip: line charts, columns, waterfalls and donuts.
 - `lib/pixel.js` draws the pixel art: Penny the coin, Oink the piggy bank, and the world icons.
-- `lib/catalog.js` lists the worlds and lessons. `content/<world>.js` holds each world's lessons as data: principle, hook, parts with simulations, job, terms, quiz, recap and links.
+- `lib/catalog.js` lists the worlds and lessons. `content/<world>.js` holds each world's lessons as data: principle, hook, parts with simulations, job, terms, quiz, recap and links. `content/insider-a.js` and `content/insider-b.js` hold the Insider's view and situation question for each lesson.
 - `lib/shell.js` renders a lesson. `lib/home.js`, `lib/glossary.js`, `lib/practice.js` and `lib/web.js` render the other pages.
 
 Progress is kept in your browser's local storage. Nothing is sent anywhere.
