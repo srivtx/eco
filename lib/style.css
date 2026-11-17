@@ -428,3 +428,16 @@ table.t tr.sub td { color: var(--ink-2); }
 @media (max-width: 520px) { .ccc-row { grid-template-columns: 1fr; gap: 3px; } }
 .mini .tbl-wrap { border: 0; background: transparent; }
 .mini table.t td { padding: 5px 4px; font-size: 13px; }
+
+/* football field */
+.ff { display: grid; gap: 9px; }
+.ff-row { display: grid; grid-template-columns: minmax(120px, 34%) 1fr; gap: 12px; align-items: center; font-size: 13.5px; font-weight: 600; }
+.ff-t { position: relative; height: 30px; background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 25%); border-radius: 6px; }
+.ff-t i { position: absolute; top: 2px; bottom: 2px; border: 2px solid var(--ink); border-radius: 7px; box-shadow: 2px 2px 0 var(--ink); transition: all .35s cubic-bezier(.3,1.2,.5,1); }
+.ff-t b { position: absolute; top: 50%; transform: translateY(-50%); font: 700 11.5px var(--mono); white-space: nowrap; }
+.ff-a { right: calc(100% + 6px); } .ff-b { left: calc(100% + 6px); }
+.ff-axis { position: relative; height: 18px; font: 500 11px var(--mono); color: var(--ink-3); }
+.ff-axis span { position: absolute; transform: translateX(-50%); }
+@media (max-width: 560px) { .ff-row { grid-template-columns: 1fr; gap: 2px; } }
+table.t.sens th { text-align: center; } table.t.sens tbody th { background: var(--tint); border-right: 2px solid var(--ink); font: 600 12px var(--mono); padding: 6px 10px; }
+table.t.sens td { text-align: center; }
