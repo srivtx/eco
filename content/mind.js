@@ -389,7 +389,7 @@ export default {
       ["Barber & Odean found the most active traders…", ["Beat the market", "Did worst", "Matched the market"], 1, "Trading costs and overconfidence ate returns."],
     ],
     recap: [["Cascade", "Rational copying, fragile crowds."], ["Beauty contest", "Guess the guessers."], ["Overconfident", "Trade less, diversify more."]],
-    see: ["bubbles", "active-passive", "game-theory", "bank-run"],
+    see: ["bubbles", "efficient", "game-theory", "bank-run"],
   },
 
   nudges: {
@@ -452,6 +452,6 @@ export default {
       ["\"I'll give you a longer contract if you cut the price\" is…", ["Distributive", "Logrolling", "Anchoring"], 1, "Trading across issues."],
     ],
     recap: [["BATNA", "Power comes from alternatives."], ["ZOPA", "Deal lives between walk-aways."], ["Anchor", "Go first if you know the value."]],
-    see: ["anchoring", "game-theory", "accretion", "ib"],
+    see: ["anchoring", "game-theory", "mna", "ib"],
   },
 };

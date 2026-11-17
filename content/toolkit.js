@@ -251,7 +251,7 @@ export default {
       ["Profit fell; price, costs and mix are flat; volume fell. Next branch to drill?", ["Fixed costs", "Volume: market size vs market share", "Price"], 1, "Volume = market × share: is the market shrinking or are we losing share?"],
     ],
     recap: [["No overlaps", "Mutually exclusive."], ["No gaps", "Collectively exhaustive."], ["Answer first", "Pyramid principle."]],
-    see: ["case", "sizing", "pnl", "frameworks"],
+    see: ["case", "sizing", "income-statement", "frameworks"],
   },
 
   sizing: {
@@ -352,7 +352,7 @@ export default {
       ["Outsourcing manufacturing usually…", ["Raises fixed costs", "Turns fixed costs into variable ones", "Raises break-even"], 1, "You pay per unit instead of owning the factory."],
     ],
     recap: [["F ÷ (P − V)", "Break-even units."], ["Fixed costs", "Amplify swings."], ["Variabilise", "Lower risk in a downturn."]],
-    see: ["unit-economics", "pnl", "leverage", "cycle"],
+    see: ["unit-economics", "income-statement", "capital-structure", "cycle"],
   },
 
   case: {
@@ -374,6 +374,6 @@ export default {
       ["Revenue +2%, costs +5.5%. Profit…", ["Rose", "Fell", "Can't tell without levels"], 2, "Depends on margins: with costs 85% of revenue it falls; with tiny costs it could still rise."],
     ],
     recap: [["Clarify", "Objective, scope, constraints."], ["Tree + data", "Hypothesis-driven drilling."], ["Answer first", "Then reasons, risks, next steps."]],
-    see: ["mece", "sizing", "frameworks", "pnl"],
+    see: ["mece", "sizing", "frameworks", "income-statement"],
   },
 };
