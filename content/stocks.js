@@ -1,5 +1,5 @@
 // World 8: Stock markets.
-import { h, money, num, pct, clamp, rng } from "../lib/core.js";
+import { h, usd, money, num, pct, clamp, rng } from "../lib/core.js";
 import { slider, seg, stats, stage, predict, calc, callout, table, bars, button, flips, stepper, formula } from "../lib/ui.js";
 import { plot, columns, donut } from "../lib/chart.js";
 
@@ -24,7 +24,7 @@ function ipoSim() {
   let price = 20;
   const orders = [[30, 2], [28, 3], [26, 4], [24, 6], [22, 8], [20, 10], [18, 12], [16, 14], [14, 16]]; // [max price, millions of shares wanted at or below]
   const offer = 10;
-  const p = plot({ height: 260, x: [0, 18], y: [10, 32], xLabel: "shares wanted (millions)", yLabel: "price", xFmt: (x) => `${num(x)}M`, yFmt: (x) => `$${num(x)}`, label: "IPO order book" });
+  const p = plot({ height: 260, x: [0, 18], y: [10, 32], xLabel: "shares wanted (millions)", yLabel: "price", xFmt: (x) => `${num(x)}M`, yFmt: (x) => usd(x), label: "IPO order book" });
   const st = stats([{ label: "Demand at this price" }, { label: "Oversubscribed" }, { label: "Raised" }, { label: "Likely day-one pop" }]);
   const draw = () => {
     const demand = (P) => { let q = 0; for (const [mp, sh] of orders) if (mp >= P) q = sh; return q; };
@@ -49,7 +49,7 @@ function orderBook() {
     last = 100; trades = []; hist = [[0, 100]]; render();
   };
   const book = h("div.ob"), log = h("div.game-log"), st = stats([{ label: "Last trade" }, { label: "Best bid" }, { label: "Best ask" }, { label: "Spread" }]);
-  const p = plot({ height: 300, x: [0, 30], y: [97, 103], xLabel: "trade #", yLabel: "price", xFmt: (x) => Math.round(x), yFmt: (x) => `$${num(x, 1)}`, label: "Trade prices" });
+  const p = plot({ height: 300, x: [0, 30], y: [97, 103], xLabel: "trade #", yLabel: "price", xFmt: (x) => Math.round(x), yFmt: (x) => usd(x, 1), label: "Trade prices" });
   const render = () => {
     const mx = Math.max(1, ...bids.map((b) => b[1]), ...asks.map((a) => a[1]));
     const row = (side, [px, q]) => h(`div.ob-r.${side}`, h("span.ob-q", num(q)), h("span.ob-p", `$${px.toFixed(2)}`), h("i", { style: { width: `${(q / mx) * 100}%` } }));
@@ -171,7 +171,7 @@ function betaSim() {
 /* ---------------- short selling ---------------- */
 function shortSim() {
   let px = 20;
-  const p = plot({ height: 240, x: [0, 100], y: [-80, 30], xLabel: "share price later (you shorted at $20)", yLabel: "profit per share", xFmt: (x) => `$${num(x)}`, yFmt: (x) => `$${num(x)}`, label: "Short payoff" });
+  const p = plot({ height: 240, x: [0, 100], y: [-80, 30], xLabel: "share price later (you shorted at $20)", yLabel: "profit per share", xFmt: (x) => usd(x), yFmt: (x) => usd(x), label: "Short payoff" });
   const draw = () => {
     p.draw({ series: [{ name: "Short", color: "var(--bad)", pts: [[0, 20], [100, -80]], width: 4 }, { name: "Long (for comparison)", color: "var(--good)", pts: [[0, -20], [100, 80]], dash: "6 5" }], hlines: [{ y: 0 }], dots: [{ x: px, y: 20 - px, color: "#ffc21a", r: 8, label: `${20 - px >= 0 ? "+" : "−"}$${num(Math.abs(20 - px))}` }] });
   };
@@ -181,7 +181,7 @@ function shortSim() {
 }
 function squeezeSim() {
   let si = 100, buyers = 30;
-  const p = plot({ height: 240, x: [0, 20], y: [0, 400], xLabel: "day", yLabel: "share price", xFmt: (x) => Math.round(x), yFmt: (x) => `$${num(x)}`, label: "Short squeeze" });
+  const p = plot({ height: 240, x: [0, 20], y: [0, 400], xLabel: "day", yLabel: "share price", xFmt: (x) => Math.round(x), yFmt: (x) => usd(x), label: "Short squeeze" });
   const st = stats([{ label: "Peak price" }, { label: "Short sellers forced out" }]);
   const draw = () => {
     let px = 20, shorts = si, pts = [[0, px]], forced = 0;
