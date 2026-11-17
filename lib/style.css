@@ -618,3 +618,23 @@ table.t.sens td { text-align: center; }
 .dlm { display: grid; gap: 16px; }
 .dlm-c { border: 2px solid var(--ink); border-radius: 14px; padding: 12px 14px; background: var(--paper); }
 .dlm-c .q { font: 600 16.5px/1.45 var(--body); }
+
+/* ===== insider's view: a dark "vault" card ===== */
+.insider { margin-top: 26px; border: 2px solid #1b1530; border-radius: 20px; overflow: hidden; background: radial-gradient(120% 140% at 0% 0%, #2f2552 0%, #1b1530 55%, #120e22 100%); color: #efeaff; box-shadow: 5px 5px 0 #ffc21a; position: relative; }
+.insider::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1.2px); background-size: 14px 14px; pointer-events: none; }
+.ins-h { display: flex; gap: 12px; align-items: center; padding: 16px 18px 6px; position: relative; z-index: 1; }
+.ins-h .eyebrow { color: #ffc21a; margin-bottom: 4px; }
+.ins-h h2 { font-size: 22px; color: #fff; }
+.ins-i { width: 44px; height: 44px; flex: none; background: #1b1530; border: 2px solid #ffc21a; border-radius: 10px; padding: 4px; display: block; --icon-ink: #fff; }
+.ins-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 12px 18px 18px; position: relative; z-index: 1; }
+.ins-c { border: 1.5px solid rgba(255,255,255,.18); border-radius: 14px; padding: 12px 14px; background: rgba(255,255,255,.04); font-size: 14.5px; line-height: 1.55; color: #ddd6f3; }
+.ins-c > b { display: block; font: 700 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #ffc21a; margin-bottom: 6px; }
+.ins-c b, .ins-c strong { color: #fff; }
+.ins-c i { color: #fff; }
+.ins-c.file { background: linear-gradient(160deg, rgba(255,194,26,.16), rgba(255,194,26,.03)); border-color: rgba(255,194,26,.5); }
+@media (max-width: 860px) { .ins-g { grid-template-columns: 1fr; } }
+
+/* situation questions */
+.sit { display: block; margin: 2px 0 10px; padding: 10px 12px 10px 14px; border-left: 5px solid var(--wc); border-radius: 0 12px 12px 0; background: color-mix(in srgb, var(--wc) 10%, var(--paper)); font-weight: 500; font-size: .95em; line-height: 1.5; }
+.sit b { display: inline-block; margin-right: 8px; padding: 1px 8px; border-radius: 999px; background: var(--wc); color: #fff; font: 700 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; vertical-align: 1px; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
+.pr-q .sit { --wc: #8b5cf6; }
