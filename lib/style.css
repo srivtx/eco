@@ -417,3 +417,5 @@ table.t tr.sub td { color: var(--ink-2); }
 .bs-c:last-child { border-bottom: 0; }
 .bs-c b { font: 750 14px var(--display); }
 @media (max-width: 520px) { .bs-col { height: 230px; } .bs-c { font-size: 11px; } }
+.flip-f { position: absolute; }
+.flip-f::after { content: "tap ↻"; position: absolute; right: 10px; bottom: 8px; font: 600 10px var(--mono); color: var(--ink-3); }
