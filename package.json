@@ -1,0 +1,10 @@
+{
+  "name": "eco",
+  "private": true,
+  "type": "module",
+  "description": "Money, markets and minds from first principles: economics, finance, private equity and behavioural psychology, taught with things you can play with",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "test": "node test/smoke.mjs"
+  }
+}
